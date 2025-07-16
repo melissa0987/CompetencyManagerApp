@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title%}Add a Term{% endblock %}
+{% block content %}
+    <main>
+        <h2>Add A Term</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Term</th><th>Semester</th>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.termID() }}</h3></td>
+                            <td>{{ form.termName() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Add A Term</button>
+        </form>
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock %} 

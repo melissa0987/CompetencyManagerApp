@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <main>
+        <h2>Change Avatar</h2>
+        <button><a href="{{url_for("users.get_profile", user_id=current_user.id)}}">Cancel</a></button>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            {{ form.avatar.label }} {{ form.avatar() }}
+        
+            <br>
+            <input type="submit"/>
+        </form>
+   </main>
+{% endblock %}

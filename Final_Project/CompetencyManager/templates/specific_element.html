@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title%}{{competency.competencyName}}{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Element</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("elements.edit_element", elementID=element.elementID)}}">Edit</a></button>
+        {% endif %}
+        <div id="competencies">
+            <table>
+                <tbody>
+                    <tr class ="allign-center">
+                        <td><a href="{{url_for("competencies.get_competency", competencyID=competency.competencyID)}}">{{competency.competencyID}}</a></td>
+                        <td><h3>{{competency.competencyName}}</h3></td>
+                        <td>{{competency.competencyType}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            {{competency.competencyAchievement}}
+                            <ol start ="{{element.elementOrder}}">
+                                <li>
+                                    <h4>{{element.elementName}}</h4>
+                                    <p>{{element.elementCriteria}}</p>
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        {% if courses_elementHours|length > 0 %}
+            <h2>Courses Teaching the Element</h2>
+            <div id="courses">
+            {% for course, elementHour in courses_elementHours %}
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Course ID</th><th>Course Title</th><th>Theory Hours</th><th>Lab Hours</th><th>Homework Hours</th><th>Total Hours</th>
+                    </tr>
+                    <tr class ="allign-center">
+                        <td><a href="{{url_for("courses.get_course", courseID=course.courseID)}}">{{course.courseID}}</a></td>
+                        <td>{{course.courseTitle}}</td><td>{{course.theoryHours}}</td><td>{{course.labHours}}</td><td>{{course.workHours}}</td>
+                        <td>{{(course.theoryHours+course.labHours)*15}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <p>{{course.description}}</p>
+                            <p>Hours Teaching Element: {{elementHour}}</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endfor %}
+            </div>
+    {% endif %}
+    </main>
+{% endblock content %}
+

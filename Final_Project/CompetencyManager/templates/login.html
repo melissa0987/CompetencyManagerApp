@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Login
+{% endblock %}
+
+{% block content %}
+    <main>
+    {% if not current_user.is_authenticated %}
+        <h2>Login</h2>
+        <form method="post">
+            {{ form.csrf_token }}
+            {{ form.email.label }}{{ form.email() }}
+            {{ form.password.label }}{{ form.password() }}
+            {{ form.remember_me.label }}{{ form.remember_me() }}
+            <input type="submit"/>
+        </form>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+        <h3>Logged in as: {{ current_user.name }}</h3>
+    {% endif %}
+    </main>
+{% endblock %}

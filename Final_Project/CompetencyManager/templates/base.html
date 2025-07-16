@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title%}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>Competency Manager</h1>
+                {% if current_user.is_authenticated %}
+                <div>
+                    <p>{{ current_user.name }}</p>
+                    <a href="{{url_for("users.get_profile", user_id=current_user.id)}}">
+                        <img class="avatar" src="{{ url_for('users.show_avatar', email=current_user.email) }}" alt="avatar"/>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{{url_for('home.index')}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('courses.get_courses')}}">Courses</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('competencies.get_competencies')}}">Competencies</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('terms.get_terms')}}">Terms</a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('domains.get_domains')}}">Domains</a>
+                    </li>
+
+                    {% if current_user.is_authenticated %}
+                        {% if current_user.account_type == 'MEMBER' %}
+                        <li>
+                            <a href="{{url_for("users.get_users_account_type", account_type="MEMBER")}}">
+                                Members
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{{url_for("users.get_all_users")}}">Users</a>
+                        </li>
+                        {% endif %}
+                {% endif %}
+
+                    {% if not current_user.is_authenticated %}
+                        <li>
+                            <a href="{{url_for('authentication.signup')}}">Signup</a>
+                        </li>
+                        <li>
+                            <a href="{{url_for('authentication.login')}}">Login</a>
+                        </li>
+                    {% endif %}
+                        
+                    {% if current_user.is_authenticated %}
+                        <li>
+                            <a href="{{url_for('authentication.logout')}}">Logout</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <div id="messages">
+            {% for message in get_flashed_messages() %}
+                {{message}}
+            {% endfor %}
+        </div>
+        {% block content %}
+        {% endblock %}
+
+        <footer>
+            <p>Christina Chiappini</p>
+            <p>Monica Dimitrova</p>
+            <p>Melissa Bangloy</p>
+            <p>Farhan Khandaker</p> 
+        </footer>
+    </body>
+</html>

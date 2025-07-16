@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title%}Add a Course{% endblock %}
+{% block content %}
+    <main>
+        <h2>Add A Course</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="courses">
+                <table>
+                    <tbody>
+                        <tr class="allign-center">
+                            <th>Course</th><th>Course ID</th><th>Theory Hours</th><th>Laboratory Hours</th><th>Homework Hours</th><th>Domain</th><th>Term</th>
+                        </tr>
+                        <tr>
+                            <td class ="inputs">{{ form.courseTitle() }}</td>
+                            <td class ="inputs">{{ form.courseID() }}</td>
+                            <td class ="inputs">{{ form.theoryHours() }}</td>
+                            <td class ="inputs">{{ form.labHours() }}</td>
+                            <td class ="inputs">{{ form.workHours() }}</td>
+                            <td class ="inputs">{{ form.domain() }}</td>
+                            <td class ="inputs">{{ form.term() }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><div class="inputs">{{form.description.label}} <br/> {{ form.description() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Add Course</button>
+        </form>
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock %} 

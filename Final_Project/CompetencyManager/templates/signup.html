@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title%}
+    Sign Up
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Signup</h2>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            {{ form.email.label}} {{ form.email() }}
+            {{ form.name.label}}{{ form.name() }}
+            {{ form.password.label}}{{ form.password() }}
+            {{ form.avatar.label }}{{ form.avatar() }}
+            <input type="submit" />
+        </form>
+        {% if current_user.is_authenticated %}
+            <h3>You have successfully signed up</h3>
+        {% endif %}
+    </main>
+{% endblock %}

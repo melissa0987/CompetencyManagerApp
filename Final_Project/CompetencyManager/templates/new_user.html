@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title%}
+    Add User
+{% endblock %}
+{% block content %}
+   <main>
+    <h2> Add A User</h2>
+    {% if current_user.account_type == 'ADMINISTRATOR_GP' %}
+        <button><a href="{{url_for("users.get_all_users")}}">Cancel</a></button>
+        <form method="post" enctype="multipart/form-data">
+            {{form.csrf_token }}
+                <table >
+                    <tbody>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.email.label }}</h3></td>
+                            <td>{{ form.email() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.name.label }}</h3></td>
+                            <td>{{ form.name() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.password.label }}</h3></td>
+                            <td>{{ form.password() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.avatar.label }}</h3></td>
+                            <td>{{ form.avatar() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.account_type.label }}</h3></td>
+                            <td>{{ form.account_type() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.is_locked.label }}</h3></td>
+                            <td>{{ form.is_locked() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <button type="submit">Add User</button>
+        </form>
+    {% endif %}
+    {% if current_user.account_type == 'ADMIN_USER_GP' %}
+        <button><a href="{{url_for("users.get_all_users")}}">Cancel</a></button>
+        <form method="post" enctype="multipart/form-data">
+            {{form.csrf_token }}
+                <table >
+                    <tbody>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.email.label }}</h3></td>
+                            <td>{{ form.email() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.name.label }}</h3></td>
+                            <td>{{ form.name() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.password.label }}</h3></td>
+                            <td>{{ form.password() }}</td>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.avatar.label }}</h3></td>
+                            <td>{{ form.avatar() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <button type="submit">Add User</button>
+        </form>
+    {% endif %}
+    <main>
+
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title%}{{competency.competencyName}}{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Competency</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("competencies.edit_competency", competencyID=competency.competencyID)}}">Edit</a></button>
+        {% endif %}
+        <div id="competencies">
+            <table>
+                <tbody>
+                    <tr>
+                        <th class ="allign-center">{{competency.competencyID}}</th>
+                        <th><h3>{{competency.competencyName}}</h3></th>
+                        <th class ="allign-center">{{competency.competencyType}}</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            {{competency.competencyAchievement}}
+                            {% for element in elements %}
+                                <ol start ="{{element.elementOrder}}">
+                                    <li>
+                                        <h4><a href="{{url_for("elements.get_element", elementID=element.elementID)}}">{{element.elementName}}</a></h4>
+                                        <p>{{element.elementCriteria}}</p>
+                                    </li>
+                                </ol>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock content %}
+

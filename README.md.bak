@@ -175,7 +175,6 @@ python -m unittest discover tests/
 
 ### Example Usage
 **Note:** These examples require college network access. External users will receive "This site can't be reached" errors.
-
 ```bash
 # Get all courses
 curl http://10.172.23.16:8000/api/v1/courses

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}{{course.courseTitle}}{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Course</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("courses.edit_course", courseID=course.courseID)}}">Edit</a></button>
+        {% endif %}
+        <div id="courses">
+            <table>
+                <tbody>
+                    <tr class="allign-center">
+                        <th>Course</th><th>Course ID</th><th>Theory Hours</th><th>Laboratory Hours</th><th>Homework Hours</th><th>Total Hours</th><th>Domain</th><th>Term</th>
+                    </tr>
+                    <tr>
+                        <td><h3>{{course.courseTitle}}</h3></td>
+                        <td class="allign-center">{{course.courseID}}</td>
+                        <td class="allign-center">{{course.theoryHours}}</td>
+                        <td class="allign-center">{{course.labHours}}</td>
+                        <td class="allign-center">{{course.workHours}}</td>
+                        <td class="allign-center">{{(course.theoryHours+course.labHours)*15}}</td>
+                        <td><a href="{{url_for("domains.get_domain", domainID=course.domainID)}}">{{domain.domainName}}</a></td>
+                        <td class="allign-center"><a href="{{url_for("terms.get_term", termID=course.termID)}}">Term {{course.termID}}, {{term.termName}}</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">{{course.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        {% if competencies|length > 0 %}
+            <h3>Competencies Taught</h3>
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        {% for competency in competencies %}
+                            <tr>
+                                <th class ="allign-center"><a href="{{url_for("competencies.get_competency", competencyID=competency.competencyID)}}">{{competency.competencyID}}</a></th>
+                                <th><h3>{{competency.competencyName}}</h3></th>
+                                <th class ="allign-center">{{competency.competencyType}}</th>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    {{competency.competencyAchievement}}
+                                    {% for element in competency.elements %}
+                                    <ol start ="{{element.elementOrder}}">
+                                            <li>
+                                                <h4><a href="{{url_for("elements.get_element", elementID=element.elementID)}}">{{element.elementName}}</a></h4>
+                                                <p>{{element.elementCriteria}}</p>
+                                                <p>Hours Teaching Element: {{element.elementHours}}</p>
+                                            </li>
+                                        </ol>
+                                    {% endfor %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </main>
+{% endblock content %}
+

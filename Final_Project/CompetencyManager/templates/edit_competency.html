@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title%}Edit a Competency{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Edit A Competency</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("competencies.delete_competency", competencyID=competency.competencyID)}}">Delete Competency</a></button>
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr class ="allign-center">
+                            <td class="inputs">{{form.competencyID.label}} <br/> {{ form.competencyID(value=competency.competencyID) }}</td>
+                            <td class="inputs">{{form.competencyName.label}} <br/> {{ form.competencyName(value=competency.competencyName) }}</td>
+                            <td class="inputs">{{form.competencyType.label}} <br/> {{ form.competencyType() }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div  class="allign-center inputs">{{form.competencyAchievement.label}} <br/> {{ form.competencyAchievement() }}</div>
+                                {% for element in elements %}
+                                <ol start ="{{element.elementOrder}}">
+                                    <li>
+                                        <p><a href="{{url_for("elements.get_element", elementID=element.elementID)}}">{{element.elementName}}</a></p>
+                                        <p>{{element.elementCriteria}}</p>
+                                    </li>
+                                </ol>
+                            {% endfor %}
+                            <button><a href="{{url_for("elements.add_element", competencyID=competency.competencyID)}}">Add An Element</a></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock content %}
+

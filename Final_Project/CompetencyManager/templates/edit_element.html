@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title%}Edit an Element{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Edit an Element</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("elements.delete_element", elementID=element.elementID)}}">Delete Element</a></button>
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr class ="allign-center">
+                            <td class="inputs">{{form.competency.label}} {{ form.competency() }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul class="allign-center">
+                                    <li>
+                                        <p class="inputs">{{form.elementOrder.label}} {{ form.elementOrder(value=element.elementOrder) }}</p>
+                                    </li>
+                                    <p class="inputs">{{form.elementName.label}} {{ form.elementName(value=element.elementName) }}</p>
+                                    <div class="inputs">{{form.elementCriteria.label}} {{ form.elementCriteria(value=element.elementCriteria) }}</div>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+
+        <h2>Courses Teaching the Element</h2>
+        <button><a href="{{url_for("elements.add_course_teaching_element", elementID=element.elementID)}}">Add A Course Teaching The Element</a></button>
+        {% if courses_elementHours|length > 0 %}
+            <div id="courses">
+            {% for course, elementHour in courses_elementHours %}
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Course ID</th><th>Course Title</th><th>Theory Hours</th><th>Lab Hours</th><th>Homework Hours</th><th>Total Hours</th>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><a href="{{url_for("courses.get_course", courseID=course.courseID)}}">{{course.courseID}}</a></td>
+                            <td>{{course.courseTitle}}</td><td>{{course.theoryHours}}</td><td>{{course.labHours}}</td><td>{{course.workHours}}</td>
+                            <td>{{(course.theoryHours+course.labHours)*15}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <p>{{course.description}}</p>
+                                <p>Hours Teaching Element: {{elementHour}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button><a href="{{url_for("elements.edit_element_hours", elementID=element.elementID, courseID=course.courseID)}}">Edit Hours</a></button>
+                <button><a href="{{url_for("elements.delete_element_teaching_course", elementID=element.elementID, courseID=course.courseID)}}">Delete Link</a></button> 
+            {% endfor %}
+            </div>
+        {% endif %}
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock content %}
+

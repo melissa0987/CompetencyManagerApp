@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title%}Add Element Taught By Course{% endblock %}
+{% block content %}
+    <main>
+        <h2>Element</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <div id="competencies">
+            <table>
+                <tbody>
+                    <tr class ="allign-center">
+                        <td><a href="{{url_for("competencies.get_competency", competencyID=competency.competencyID)}}">{{competency.competencyID}}</a></td>
+                        <td><h3>{{competency.competencyName}}</h3></td>
+                        <td>{{competency.competencyType}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            {{competency.competencyAchievement}}
+                            <ol start ="{{element.elementOrder}}">
+                                <li>
+                                    <h4>{{element.elementName}}</h4>
+                                    <p>{{element.elementCriteria}}</p>
+                                </li>
+                            </ol>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>New Course Teaching The Element</h2>
+
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Course</th><th>Hours Teaching Element</th>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.courseID() }}</h3></td>
+                            <td>{{ form.elementHours() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Add Course Teaching Element</button>
+        </form>
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+
+{% endblock %} 

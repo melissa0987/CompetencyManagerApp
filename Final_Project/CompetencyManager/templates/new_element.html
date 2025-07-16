@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title%}Add an Element{% endblock %}
+{% block content %}
+    <main>
+        <h2>Add An Element</h2?>
+        {% if current_user.account_type == "MEMBER"%}
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr class ="allign-center">
+                            <td class="inputs">{{form.competency.label}} {{ form.competency() }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul class="allign-center">
+                                    <li>
+                                        <p class="inputs">{{form.elementOrder.label}} {{ form.elementOrder() }}</p>
+                                    </li>
+                                    <p class="inputs">{{form.elementName.label}} {{ form.elementName() }}</p>
+                                    <div class="inputs">{{form.elementCriteria.label}} {{ form.elementCriteria() }}</div>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Add Element</button>
+        </form>
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock %} 

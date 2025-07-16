@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title%}Domains{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Domains</h2>
+        {% if current_user.account_type == "MEMBER"%}
+            <button><a href="{{url_for("domains.add_domain")}}">Add A Domain</a></button>
+        {% endif %}
+        <div id="competencies">
+            {% for domain in domains %}
+            <table>
+                <tbody>
+                    <tr class ="allign-center">
+                        <td><h3><a href="{{url_for("domains.get_domain", domainID=domain.domainID)}}">{{domain.domainName}}</a></h3></td>
+                    </tr>
+                    <tr>
+                        <td>{{domain.description}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock content %}
+

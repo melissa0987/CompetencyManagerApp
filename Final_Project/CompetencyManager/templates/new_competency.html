@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title%}Add a Competency{% endblock %}
+{% block content %}
+    <main>
+        <h2>Add A Competency</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr class ="allign-center">
+                            <td class="inputs">{{form.competencyID.label}} <br/> {{ form.competencyID() }}</td>
+                            <td class="inputs">{{form.competencyName.label}} <br/> {{ form.competencyName() }}</td>
+                            <td class="inputs">{{form.competencyType.label}} <br/> {{ form.competencyType() }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div  class="allign-center inputs">{{form.competencyAchievement.label}} <br/> {{ form.competencyAchievement() }}</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Add Competency</button>
+        </form>
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock %} 

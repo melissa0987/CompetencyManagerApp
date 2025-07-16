@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}{{course.courseTitle}}{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Edit A Course</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("courses.delete_course", courseID=course.courseID)}}">Delete Course</a></button>
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="courses">
+                <table>
+                    <tbody>
+                        <tr class="allign-center">
+                            <th>Course</th><th>Course ID</th><th>Theory Hours</th><th>Laboratory Hours</th><th>Homework Hours</th><th>Domain</th><th>Term</th>
+                        </tr>
+                        <tr>
+                            <td class ="inputs">{{ form.courseTitle(value=course.courseTitle) }}</td>
+                            <td class ="inputs">{{ form.courseID(value=course.courseID) }}</td>
+                            <td class ="inputs">{{ form.theoryHours(value=course.theoryHours) }}</td>
+                            <td class ="inputs">{{ form.labHours(value=course.labHours) }}</td>
+                            <td class ="inputs">{{ form.workHours(value=course.workHours) }}</td>
+                            <td class ="inputs">{{ form.domain() }}</td>
+                            <td class ="inputs">{{ form.term() }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><div class="inputs">{{form.description.label}} <br/> {{ form.description() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+
+        {% if competencies|length > 0 %}
+        <h3>Competencies Taught</h3>
+        <div id="competencies">
+            <table>
+                <tbody>
+                    {% for competency in competencies %}
+                        <tr>
+                            <th class ="allign-center"><a href="{{url_for("competencies.get_competency", competencyID=competency.competencyID)}}">{{competency.competencyID}}</a></th>
+                            <th class ="allign-center"><h3>{{competency.competencyName}}</h3></th>
+                            <th class ="allign-center">{{competency.competencyType}}</th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                {{competency.competencyAchievement}}
+                                {% for element in competency.elements %}
+                                    <ol start ="{{element.elementOrder}}">
+                                        <li>
+                                            <h4><a href="{{url_for("elements.get_element", elementID=element.elementID)}}">{{element.elementName}}</a></h4>
+                                            <p>{{element.elementCriteria}}</p>
+                                            <p>Hours Teaching Element: {{element.elementHours}}</p>
+                                        </li>
+                                    </ol>
+                                    <button><a href="{{url_for("elements.edit_element_hours", elementID=element.elementID, courseID=course.courseID)}}">Edit Hours</a></button>
+                                    <button><a href="{{url_for("elements.delete_element_teaching_course", elementID=element.elementID, courseID=course.courseID)}}">Delete Link</a></button>
+                                {% endfor %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock content %}
+

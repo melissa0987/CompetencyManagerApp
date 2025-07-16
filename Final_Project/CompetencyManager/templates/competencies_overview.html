@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title%}Competencies{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Competencies</h2>
+        {% if current_user.account_type == "MEMBER"%}
+            <button><a href="{{url_for("competencies.add_competency")}}">Add A Competency</a></button>
+        {% endif %}
+        <div id="competencies">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Competency ID</th><th>Competency</th><th>Type</th>
+                    </tr>
+                    {% for competency in competencies %}
+                    <tr>
+                        <td class ="allign-center"><a href="{{url_for("competencies.get_competency", competencyID=competency.competencyID)}}">{{competency.competencyID}}</a></td>
+                        <td><h3>{{competency.competencyName}}</h3></td>
+                        <td class ="allign-center">{{competency.competencyType}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock content %}
+

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title%}Terms{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Terms</h2>
+        {% if current_user.account_type == "MEMBER"%}
+            <button><a href="{{url_for("terms.add_term")}}">Add A Term</a></button>
+        {% endif %}
+        <div id="competencies">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Term</th><th>Semester</th>
+                    </tr>
+                    {% for term in terms %}
+                        <tr class ="allign-center">
+                            <td><h3><a href="{{url_for("terms.get_term", termID=term.termID)}}">Term {{term.termID}}</a></h3></td>
+                            <td>{{term.termName}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+{% endblock content %}
+

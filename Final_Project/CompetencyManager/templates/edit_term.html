@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title%}Term {{term.termID}}{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Edit A Term</h2>
+        {% if current_user.account_type == "MEMBER"%}
+        <button><a href="{{url_for("terms.delete_term", termID=term.termID)}}">Delete</a></button>
+        <form method="POST">
+            {{form.csrf_token }}
+            <div id="competencies">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Term</th><th>Semester</th>
+                        </tr>
+                        <tr class ="allign-center">
+                            <td><h3>{{ form.termID(value=term.termID) }}</h3></td>
+                            <td>{{ form.termName() }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit">Save Changes</button>
+        </form>
+
+        {% if courses|length > 0 %}
+            <h2>Courses In Term</h2>
+            <div id="courses">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Course ID</th><th>Course Title</th><th>Theory Hours</th><th>Lab Hours</th><th>Homework Hours</th><th>Total Hours</th>
+                        </tr>
+                        {% for course in courses %}
+                            <tr>
+                                <td class ="allign-center"><a href="{{url_for("courses.get_course", courseID=course.courseID)}}">{{course.courseID}}</a></td>
+                                <td><h3>{{course.courseTitle}}</h3></td>
+                                <td class ="allign-center">{{course.theoryHours}}</td>
+                                <td class ="allign-center">{{course.labHours}}</td>
+                                <td class ="allign-center">{{course.workHours}}</td>
+                                <td class ="allign-center">{{(course.theoryHours+course.labHours)*15}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+        {% else %}
+            <p>Access Denied
+        {% endif %}
+    </main>
+{% endblock content %}
+

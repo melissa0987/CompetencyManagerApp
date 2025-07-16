@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title%} Edit User {% endblock %}
+
+{% if current_user != 'MEMBER' %}
+{% block content %}
+<main>
+        <h2>Edit User</h2>
+        <button><a href="{{url_for("users.get_profile", user_id=user.id)}}">Cancel</a></button>
+        <form method="POST">
+            {{form.csrf_token }}
+                <div id="competencies">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th> User ID </th> 
+                                <th> Avatar </th> 
+                                <th> Name </th> 
+                                <th> Email </th> 
+                                {% if current_user != user %}
+                                    {% if current_user.account_type !='MEMBER' %}
+                                    <th> Role </th>
+                                    <th> Locked </th>
+                                    {% endif %}
+                                {% endif %}
+
+                            </tr>
+                            <tr class ="allign-center">
+                                <td>{{ user.id }}</td>
+                                <td>
+                                    <img src="{{ url_for('users.show_avatar', email=user.email) }}" alt="avatar">
+                                </td>
+                                <td>{{ form.name() }}</td>
+                                <td>{{ user.email }}</td>
+                                {% if current_user != user %}
+                                    {% if current_user.account_type !='MEMBER' %}
+                                        <td>{{ form.account_type() }}</td>
+                                        <td>{{ form.is_locked() }}</td>
+                                    {% endif %}
+                                {% endif %}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            <button type="submit">Save Changes</button>
+        </form>
+    
+</main>
+{% endblock content %}
+{% endif %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title%}
+    Blocked User List
+{% endblock %}
+{% block content %}
+<main>
+    {% if current_user.account_type !='MEMBER' %}
+            <div class="admin_dashboard">
+                <ul>
+                    <li>
+                        <a href="{{url_for("users.get_all_users")}}">
+                            All Users 
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for("users.get_users_account_type", account_type="MEMBER")}}">
+                            Members
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for("users.get_users_account_type", account_type="ADMIN_USER_GP")}}">
+                            User Administrators
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for("users.get_users_account_type", account_type="ADMINISTRATOR_GP")}}">
+                            Administrators
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for("users.get_blocked_users")}}">
+                            Blocked Users
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        {% endif %}
+    {% if users|length == 0 %}
+        <h2> No blocked users </h2>
+    {% else %}
+    <h2> Blocked Users</h2>
+    <p class="count_view">  count: {{ users|length }}</p>
+    <div class="users_table">
+        <table>
+            <tbody>
+                <tr class ="allign-center">
+                    <th> Avatar </th> 
+                    {% if current_user.account_type !='MEMBER' %}
+                    <th> User ID </th> 
+                    {% endif %}
+                    <th> Name </th> 
+                    <th> Email </th> 
+                    {% if current_user.account_type !='MEMBER' %}
+                        <th> Role </th>
+                        <th> Locked </th>
+                    {% endif %}
+                </tr>
+                {% for user in users %}
+                    {% if user != current_user %} 
+                    <tr class ="allign-center">
+                        <td>
+                            <img src="{{ url_for('users.show_avatar', email=user.email) }}" alt="avatar">
+                        </td>
+                        <td>{{ user.name }}</td>
+                        <td>
+                            <a href="{{url_for("users.get_profile", user_id=user.id)}}">
+                                {{ user.email }}
+                            </a>
+                        </td>
+                        {% if current_user.account_type !='MEMBER' %}
+                            {% if user.account_type == 'MEMBER' %}
+                                <td> Member </td>
+                            {% elif user.account_type == 'ADMIN_USER_GP' %}
+                                <td> User Administrator </td>
+                            {% else %}
+                                <td> Group Administrator </td>
+                           {% endif %}
+                            {% if user.is_locked == 0 %}
+                                <td> False </td>
+                            {% else %}
+                                <td> True </td>
+                            {% endif %}
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> 
+    {% endif %}
+    
+</main>
+{% endblock %}

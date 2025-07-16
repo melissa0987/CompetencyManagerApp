@@ -1,0 +1,409 @@
+melissa bangloy - ?
+Farhan Khandaker - Merge branch 'develop' into 'main'
+Farhan Khandaker - Finished Submission
+Farhan Khandaker - fixed problems
+Farhan Khandaker - Merge branch 'develop' into 'main'
+Farhan Khandaker - Fixing login problems
+Farhan Khandaker - Merge branch 'develop' into 'main'
+Farhan Khandaker - Fixing login problems
+Farhan Khandaker - Merge branch 'develop' into 'main'
+Farhan Khandaker - Fixing login problems
+Farhan Khandaker - Merge branch 'develop' into 'main'
+Farhan Khandaker - Fixing deployment on linux
+Farhan Khandaker - Merge branch 'develop' into 'main'
+Farhan Khandaker - Added gunicorn
+Farhan Khandaker - Finalising
+Christina Chiappini - Merge branch 'feature/api-elements-tests' into 'develop'
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/api-elements-tests
+christina_chiappini - Implemented testing for element api
+Melissa - Merge branch 'debug/add_user' into 'develop'
+Melissa - Merge branch 'user/dashboard' into 'develop'
+melissa_louise - still fixing h2
+melissa_louise - fix h2
+melissa_louise - merge_conflict_resolved
+melissa_louise - fixed admin dashboard
+Monica Dimitrova - Merge branch 'commenting' into 'develop'
+Monica - Fixed conflicts
+Farhan Khandaker - Merge branch 'entityfixes' into 'develop'
+Farhan Khandaker - More fixes with count
+melissa_louise - fixed admin dashboard
+Monica - Fixed merge conflict
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/api-elements-tests
+Monica - Added comments again
+christina_chiappini - Fixed tiny bugs in element api tests
+Farhan Khandaker - Merge branch 'entityfixes' into 'develop'
+Farhan Khandaker - Fixed all implementations of get all methods
+Monica - Adding comments
+melissa_louise - moved flash msg to the top
+christina_chiappini - Implemented test_post_element_given_already_existing_element unit test for elements api
+christina_chiappini - Created tests for elements
+Monica Dimitrova - Merge branch 'testing' into 'develop'
+Melissa - Merge branch 'debug/add_user' into 'develop'
+Monica - Finished tests for competencies api
+melissa_louise - fixed bug on avatar
+melissa_louise - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into debug/add_user
+melissa_louise - fixed default image for signup and adding new user
+Christina Chiappini - Merge branch 'feature/element-api' into 'develop'
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/element-api
+Farhan Khandaker - Fixing displaying
+christina_chiappini - Implemented put element for rest api
+christina_chiappini - Implement delete_element method for rest api
+melissa_louise - edited html/css for change password and avatar
+christina_chiappini - Implemented getting a single element for the rest api
+Monica Dimitrova - Merge branch 'feature/domains-api' into 'develop'
+melissa_louise - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into debug/add_user
+Melissa - Merge branch 'debug/add_user' into 'develop'
+Monica - All tests are successful
+christina_chiappini - Implemented getting several elements and posting an element for the rest api
+melissa_louise - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into debug/add_user
+christina_chiappini - Added private method for helping pagination of elements in db.py
+Farhan Khandaker - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into entityfixes
+Monica Dimitrova - Merge branch 'feature/domains-api' into 'develop'
+christina_chiappini - Added pagination logic to get elements in db.py
+Monica - Tests completed
+christina_chiappini - Added pagify private method in elements api to return page url's
+christina_chiappini - Added blueprint to init file for elements api
+Farhan Khandaker - Edited readme
+christina_chiappini - added to dict method for elements
+christina_chiappini - Added from json method in elements
+Monica - Adding tests
+Farhan Khandaker - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into entityfixes
+Farhan Khandaker - Fixed domainID generation and added validation for length of primary key
+Monica - pulled from develop
+Monica - Debugging tests
+christina_chiappini - Debugged test typo in test_put_course_update_successful
+christina_chiappini - Implemented test_put_course_update_successful unit test
+christina_chiappini - Implemented test_put_course_post_successful unit test
+christina_chiappini - Implemented test_put_course_update_given_already_existing_course test
+christina_chiappini - Impleented test_put_course_given_invalid_json unit test
+christina_chiappini - Impleented test_put_course_given_invalid_course_id unit test
+christina_chiappini - Enforced test for detting a course that doesn't exist by ensuring it isn't in db
+christina_chiappini - Implemented test for deleting specific course, given an id that is not ten characters and therefore invalid
+christina_chiappini - Implemented test for getting specific course, given an id that is not ten characters and therefore invalid
+christina_chiappini - Implemented test for getting specific course, given an id that is not in the db
+christina_chiappini - Implemented test for getting a specific course successfully
+christina_chiappini - Added test to ensure proper behaviour when a course that already exists in the db is attempting to be posted
+christina_chiappini - Fixed naming typos
+christina_chiappini - Implemented test to ensure proper error code when badly formatte course is attempted to be posted
+christina_chiappini - Added asserts for chekcing that error messages are in fact there
+christina_chiappini - Finalized test for ensuring deleting of a course is successful
+christina_chiappini - Added test for posting new course successfully
+christina_chiappini - Added get rowcount to another method in db.py
+christina_chiappini - Temporarely changed variable names back to camelcase so things can function for now
+christina_chiappini - Added returning cursor rowcount statements for db methods that update add or delete
+melissa bangloy - edited h2 for blocked users
+melissa bangloy - modified profile display/css
+melissa bangloy - fixed bug when adding users, changed links for users_overview
+Monica - Need to debug tedt on post and put to update
+christina_chiappini - Added to dictionary method in courses
+christina_chiappini - Added to dictionary method in courses
+christina_chiappini - Added test for course api given invalid page (this time I pass letters as a page number  instead of a non-existing page)
+christina_chiappini - Added test for course api given invalid page
+christina_chiappini - Added get courses test when no pages are specified
+christina_chiappini - Added test for successfully getting courses
+christina_chiappini - Fixed bugs from bad naming
+christina_chiappini - added unittest module to requirements.txt
+christina_chiappini - Added functionality for pagination
+melissa bangloy - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into debug/add_user
+Monica - Need to add more tests
+melissa bangloy - Merge branch 'logintables' of https://gitlab.com/python_winter2023/Final_Project into develop
+Farhan Khandaker - Merge branch 'logintables' into 'develop'
+melissa bangloy - branch update: pulled from develop
+christina_chiappini - Had to just change some cariable names back to camel case temporarily so things continue to work for now
+Christina Chiappini - Merge branch 'feature/courses-api' into 'develop'
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+Monica - Started the api for terms
+Monica - Pulled the changes we made together..with Christina
+Monica - Debugging the tests
+christina_chiappini - Created method headers for all tests i want to implement
+christina_chiappini - Added validation for post course to fail if a course by that id already exists
+christina_chiappini - Added validation to verify that the course being updated in the put method, isn't being updated to a value that already exists
+christina_chiappini - Added validation to verify that the course being updated in the put method, isn't being updated to a vlue that already exists
+christina_chiappini - Debugging test for updateing competency (Monica & Christina)
+christina_chiappini - Added more specific error returns in competencies put method for the api
+christina_chiappini - Debugged tests for competency api.
+Farhan Khandaker - Fixing login problems
+melissa_louise - fixed default img for instructor
+Farhan Khandaker - Fixing problems
+melissa_louise - merge conflict resolved from branch logintables
+Monica - Adding and debugging tests
+christina_chiappini - Need to switch branches, no new features implemented
+melissa_louise - found bug for adding new user
+melissa_louise - edit
+Farhan Khandaker - Merging from develop
+Farhan Khandaker - Finished removing exception catching and adding comments
+Farhan Khandaker - Removed try except. Added comments. Missing user methods
+christina_chiappini - changed courses_api method to get_or_post_courses, more descriptive of method's function
+christina_chiappini - changed course_api method to get_course, more descriptive of method's function
+christina_chiappini - Removed validation for url parameter being a string, unecessary
+Melissa - Merge branch 'feat/edit_user' into 'develop'
+Monica - Merge branch 'feature/competencies-api' of https://gitlab.com/python_winter2023/Final_Project into feature/competencies-api
+Monica - Updated put method
+christina_chiappini - Fixed test for verifying get_competencies, it wasn't eorking there was a typo.
+christina_chiappini - Updated put method for courses api.
+christina_chiappini - Fixed url_for blueprint parameter typo
+christina_chiappini - Added returning response mechanism for post of courses api
+Farhan Khandaker - Added edit element hours
+melissa bangloy - found bug for avatar display
+melissa bangloy - change avatar works
+melissa bangloy - moved users code to users_views.py
+melissa bangloy - changed variable names following pep-8
+melissa bangloy - edited form validation for changing password
+Monica - Added the tests but need to debug
+Monica - Added put request method
+christina_chiappini - Merge branch 'feature/courses-api' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+christina_chiappini - Fixed bug in courses api, bad indentation
+Monica - removed unused imports
+christina_chiappini - Merge branch 'feature/courses-api' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+christina_chiappini - Adde get course method to api
+Monica - Added get, post, delete, same model as for courses-api... but still has some bugs
+Farhan Khandaker - Denied access to forms for non members
+christina_chiappini - Added versioning to api.
+Monica - Degugging delete course test, but pls push your changes Christina
+Farhan Khandaker - Fixed bugs
+melissa bangloy - added path to images, for creation od user
+Farhan Khandaker - Fixed updating foreign keys
+melissa bangloy - done: is_locked, edit, change password, add new user(for admins)
+melissa bangloy - edited styles for users
+melissa bangloy - changing password for other account type works(did some validation)
+melissa bangloy - changing own password works
+melissa bangloy - modified profile display
+melissa bangloy - editing admin_dashboard
+melissa bangloy - added dashboard
+melissa bangloy - added images folder for default avatar options
+melissa bangloy - editing users_overview
+Monica - Merge branch 'feature/courses-api' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+Monica - Added delete course & started test
+melissa bangloy - changed profject folder name
+christina_chiappini - Merge branch 'feature/courses-api' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+christina_chiappini - Pagination for courses api, added a custom exception, and validated for wrong entries.
+Farhan Khandaker - Removed buttons of user is not a member
+melissa_louise - editing users_view.html
+Farhan Khandaker - Displaying Avatar in corner
+Monica - Renamed to support import the module for the tests
+Monica - Setup for tests
+melissa_louise - debugged edit_user based on current_user's account_type
+Monica - Started implementing delete and made a folder for tests
+Farhan Khandaker - Merging
+Monica - fixed merge conflict
+Monica - Merge branch 'feature/courses-api' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+Farhan Khandaker - Merge branch 'search' into 'develop'
+Monica - checked
+Farhan Khandaker - Fixed merge
+christina_chiappini - Commiting so monica can have my changes, still erros
+Farhan Khandaker - Merging
+Monica - debugging
+melissa_louise - edited edit_user: removed form.email
+melissa_louise - edit
+christina_chiappini - Added pagination logic to null previous and next pages if they're not there.
+melissa_louise - edited edit_user
+Monica - debugging
+melissa_louise - branch update: pulled from feature'/login
+Monica - testing and fixing small bugs
+Monica - add_instructor called in login, left to implement lock_user
+melissa bangloy - edit works, need to refactor for diff account_types
+melissa bangloy - trying to refactor edit_user for different account_types
+melissa bangloy - edited img display
+Monica - pulled from feature/user_views
+Monica - Fixing a bug in editing a user
+melissa bangloy - done with delete_user, and update_user
+Monica - pulled from feat/user_views
+melissa bangloy - update_user
+melissa bangloy - added @login_required
+melissa bangloy - debugging edit_user method
+Monica - Fixed the avatar file extensions allowed
+Monica - Fixed avatar requirement, added delete_user function, added remeber me (for 7 days), added validation in add_instructor
+Monica - pulled from feat/user_views
+Monica - debugging
+melissa bangloy - branch update: pulled from new_user_views
+melissa bangloy - Merge branch 'new_user_views' of https://gitlab.com/python_winter2023/Final_Project into feat/user_views
+Melissa - Merge branch 'feat/user_views' into 'develop'
+melissa bangloy - edited styling
+melissa bangloy - fixed img display in html for users
+melissa bangloy - edited user_dashboard
+melissa bangloy - added Profile and Users option on nav bar
+Farhan Khandaker - Search domains works
+Farhan Khandaker - Search through elements works
+Farhan Khandaker - Search courses and competencies works
+christina_chiappini - Added get_courses_count helper method to db.py
+Farhan Khandaker - Added db method to search through courses
+melissa_louise - created edituser
+melissa_louise - branch update: pulled from develop
+Christina Chiappini - Merge branch 'editforms' into 'develop'
+christina_chiappini - Implemented get courses api
+Farhan Khandaker - Remade styling of forms
+christina_chiappini - moved courses_api.py file
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/courses-api
+christina_chiappini - Created new courses-api file
+Farhan Khandaker - CSS overhaul
+melissa bangloy - edited css for table styling for user views
+Farhan Khandaker - Updating
+Farhan Khandaker - Added editing and deleting a term. Fixed select fields not having right default when editing
+melissa bangloy - revised: specific_user.html and user_overview.html
+melissa bangloy - added insert statements in SQL for user samples: TO BE DELETED LATER
+melissa bangloy - deleted  members_views.py
+melissa bangloy - moving all members_views code to auth_views
+Farhan Khandaker - Merge branch 'addingforms' into 'develop'
+Farhan Khandaker - Fixed the pages to not display lists if list is empty
+melissa bangloy - viewing all users(member type) works
+Farhan Khandaker - Updated overviews and added deleting domains
+Farhan Khandaker - Added buttons to edit
+Farhan Khandaker - Fixed some of the pages
+Farhan Khandaker - Fixed editing a course
+melissa_louise - inserted instructor TO BE DELETED
+Farhan Khandaker - Editing a course. Needs fixes
+melissa_louise - edit add_instructor
+melissa_louise - update branch: pulled from feature/login
+melissa_louise - editing user_list for members
+Farhan Khandaker - Added remove relationship between element taought by course
+Monica - Fixed some issues and pulling
+melissa_louise - changed is_locked as in integer
+melissa_louise - editing profile_table
+melissa_louise - edit: specific_user.html
+melissa bangloy - fixed users_overview.html, did redirect when logged in
+Monica - Added function to add the instructor
+melissa bangloy - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feat/user_views
+Monica - Fixed bugs in add_user, get_user and added list of members a member can see after they have logged in
+melissa bangloy - ?
+melissa bangloy - edit users_overview.html
+Melissa - Merge branch 'feat/user_views' into 'develop'
+Farhan Khandaker - Made domainID auto generate
+Farhan Khandaker - Adding relationship between courses and elements
+Farhan Khandaker - Added adding relationship between element and course
+Farhan Khandaker - Added displaying of courses teaching element and element hours per course
+Farhan Khandaker - Added some extra information to edit competency
+Farhan Khandaker - Added db method to update competency
+Farhan Khandaker - Added page to edit competency, missing db method
+melissa bangloy - commented, since it need to be revised
+melissa bangloy - modified users_overview.html
+melissa bangloy - created member_view.py
+melissa bangloy - debug auth_views.py
+melissa bangloy - update: pulled from login/feature
+melissa bangloy - added views for users
+melissa bangloy - added views tables for different account type
+melissa bangloy - created view_all_users
+melissa bangloy - created view tables for users
+melissa bangloy - Merge branch 'feature/login' of https://gitlab.com/python_winter2023/Final_Project into feature/login
+Monica - pulled from user_views
+melissa bangloy - Merge branch 'feature/login' of https://gitlab.com/python_winter2023/Final_Project into feature/login
+Monica - Modified Member class & added Group class + design how methods would look like
+melissa bangloy - edited user views
+melissa bangloy - added insert statements for user_groups and the default user
+melissa bangloy - created table for user_groups, modified app_users
+melissa bangloy - resolving merge conflict
+melissa bangloy - updating branch
+melissa bangloy - Merge branch 'addingforms' of https://gitlab.com/python_winter2023/Final_Project into user_views
+melissa bangloy - added view_members
+Farhan Khandaker - Added adding an element and a competency
+Christina Chiappini - Merge branch 'competencies' into 'develop'
+melissa_louise - corrected users_view bug
+Monica - signup, login, logout works
+Farhan Khandaker - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into addingforms
+Monica - fixed merge conflict
+Farhan Khandaker - Adding a domain
+Farhan Khandaker - Added adding a term
+Farhan Khandaker - Tested adding a course
+Farhan Khandaker - Added form to add a course
+Farhan Khandaker - Some style changes
+Farhan Khandaker - Added styling to competencies
+Monica - Added functions add_user and get_user
+melissa_louise - adding blueprint for users_view
+Farhan Khandaker - Added displaying of competencies to courses and elements of competencies
+melissa_louise - started admin_user
+melissa_louise - started code for administrator.py
+melissa_louise - resolving merge conflict
+melissa_louise - updating branch
+Christina Chiappini - Merge branch 'feature/sql-table' into 'develop'
+melissa_louise - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project
+Farhan Khandaker - Added styling to courses
+christina_chiappini - Added functionality for getting and retrieving user object from db
+christina_chiappini - added get_user method to db.py
+christina_chiappini - made member is_locked parameter false by default
+christina_chiappini - removed avatar path from member class
+christina_chiappini - removed avatar path from db user table
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feauture/user-db-functionality
+Christina Chiappini - Merge branch 'feature/sql-table' into 'develop'
+christina_chiappini - added add_user method in db
+christina_chiappini - altered member class to reflect db table
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/sql-table
+christina_chiappini - Fixed errors that were occuring in given code about triggers and other weirdness.
+christina_chiappini - Fixed errors that were occuring in given code about triggers and other weirdness.
+Melissa - Merge branch 'feature/home_view' into 'develop'
+melissa bangloy - modified heade title of bas; added title for login, signup and home. added note for signup and login
+melissa bangloy - modified base, implemented authentification
+melissa bangloy - added home_bp in init
+Melissa - Merge branch 'feature/home_view' into 'develop'
+Farhan Khandaker - Merge branch 'courses' into 'develop'
+melissa bangloy - added home_views
+Farhan Khandaker - Merge branch 'competencies' into 'courses'
+Farhan Khandaker - Added competency routes
+melissa bangloy - updating branch
+Farhan Khandaker - Added routes for elements
+Farhan Khandaker - Added db methods for elements
+Farhan Khandaker - Added element class
+Farhan Khandaker - Remade the displaying of courses and fixed bug
+Farhan Khandaker - Merging from develop
+Monica Dimitrova - Merge branch 'feature/login' into 'develop'
+Monica - Fixed merge conflict
+Farhan Khandaker - Added displaying term of course
+Monica - Fixed things after code review
+Farhan Khandaker - Added blueprint for domains
+melissa bangloy - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/home_views
+Melissa - Merge branch 'edit/python_folder' into 'develop'
+christina_chiappini - Add users table to sql setup file
+melissa bangloy - added home_views.py
+melissa bangloy - changed index.html to home.html
+Monica - Modified create_app and added id in member
+Farhan Khandaker - Added blueprint for courses
+melissa bangloy - added homes_view.py for Blueprint
+Monica - Added login and logout
+melissa bangloy - deleted python folder
+Farhan Khandaker - Added basic template for all terms and all domains
+Farhan Khandaker - Displaying courses works. Base needs fixing
+Farhan Khandaker - Added domain and db methods
+Farhan Khandaker - Merge branch 'courses' into 'develop'
+Farhan Khandaker - Finished pulling
+Farhan Khandaker - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into courses
+Farhan Khandaker - Added term and term related database methods
+Melissa - Merge branch 'admin_page' into 'develop'
+Christina Chiappini - Merge branch 'feature/basic-templates' into 'develop'
+Melissa - Merge branch 'cherry-pick-5ff1419f' into 'develop'
+Melissa - Merge branch 'feature/login' into 'develop'
+Farhan Khandaker - Fixed courses and db methods
+melissa bangloy - merge error
+melissa bangloy - adding h2
+melissa bangloy - Merge branch 'feature/login' of https://gitlab.com/python_winter2023/Final_Project into admin_page
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/basic-templates
+christina_chiappini - Created templates for viewing specific course and element and competency
+melissa bangloy - Merge branch 'feature/login' of https://gitlab.com/python_winter2023/Final_Project into feature/login
+christina_chiappini - Add comment to signup page
+Melissa - Add new file
+christina_chiappini - Add signup page
+christina_chiappini - Add 404 page
+christina_chiappini - Add home page
+christina_chiappini - Add base template
+melissa bangloy - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into admin_page
+Melissa - Merge branch 'revert-5ff1419f' into 'develop'
+Melissa - Revert "Merge branch 'feature/login' into 'develop'"
+Melissa - Merge branch 'feature/login' into 'develop'
+melissa bangloy - changed file name
+Monica - Added comment for things that needs to be done
+melissa bangloy - added admin_user_view where admin can view all users
+Monica - Now using get_db, but should next create table USERS and add methods get_user, add_user
+Monica - Merge branch 'courses' of https://gitlab.com/python_winter2023/Final_Project into feature/login
+Monica - Started defining function signup
+Farhan Khandaker - Added course class and some db methods
+melissa bangloy - removed employee_id attribute
+melissa bangloy - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into admin
+melissa bangloy - done Admin.py
+Christina Chiappini - Merge branch 'feature/init-file' into 'develop'
+christina_chiappini - Merge branch 'develop' of https://gitlab.com/python_winter2023/Final_Project into feature/init-file
+Monica - Added class Member, SignupForm and LoginForm
+christina_chiappini - Add boilerplate code for innit file
+Monica - Updated requirements to add Flask-Login
+Monica - Created file member.py
+Christina Chiappini - Merge branch 'develop' into 'main'
+christina_chiappini - Moved files from instruction into sql directory.
+melissa_louise - adding initial files
+christina_chiappini - Initial setup of most files
+Christina Chiappini - Initial commit

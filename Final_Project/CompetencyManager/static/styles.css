@@ -1,0 +1,411 @@
+body, html {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: consolas;
+    padding: 0em;
+    margin: 0em;
+    height: 100%;
+    width: 100%;
+    background-color: #FEF9F3;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0039A9;
+    width: 100%;
+}
+
+header > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5px;
+}
+
+header > div > div > a > img{
+    border: solid white 1px;
+}
+
+header > div > div > a{
+    display: block;
+}
+
+header > div > div{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+header > div > div > p{
+    color: white;
+    display: flex;
+    margin: 0px 10px 0px 0px;
+}
+
+.avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+main{
+    flex: 1;
+    width: 95%;
+}
+
+footer{
+    background-color: #0039A9;
+    color: #FAF5EF;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+h1 {
+    padding: 0.5em;
+    margin: 0em;
+    color: #FAF5EF;
+}
+
+nav {
+    width: 100%;
+}
+
+nav > ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav > ul > li {
+    flex: 1;
+    border: solid 1px white;
+    text-align: center;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.flash {
+    margin: 1em;
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 0.5em;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.allign-center{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+main > form{
+    width: 100%;
+}
+
+#courses{
+    width: 100%;
+}
+
+#competencies{
+    width: 100%;
+}
+
+#courses > table{
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+#courses > table > tbody > tr > td, th{
+    border: solid 1px black;
+}
+
+#courses > table > tbody > tr > th{
+    background-color: lightgrey;
+}
+
+#competencies > table{
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+#competencies > table > tbody > tr > td, th{
+    border: solid 1px black;
+}
+
+#competencies > table > tbody > tr > th{
+    background-color: lightgrey;
+}
+
+#competencies > table > tbody > tr > td > ol, ul{
+    margin: 0px 20px;
+}
+
+.elements > table{
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0px;
+}
+
+.elements > table > tbody > tr > td, th{
+    border: solid 1px black;
+}
+
+.elements > table > tbody > tr > th{
+    background-color: lightgrey;
+}
+
+.elements > table > tbody > tr > td > ol, ul{
+    margin: 0px 20px;
+}
+
+
+.inputs > textarea, input, select{
+    width: 95%;
+    margin: auto;
+}
+
+.inputs > textarea{
+    height: 100px;
+}
+
+a{
+    display: block;
+}
+
+button > a{
+    padding: 5px 10px;
+}
+
+img{
+    width: 150px;
+}
+
+#search > form{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#search-entity{
+    flex: 2;
+}
+
+#search-query{
+    flex: 6;
+}
+
+#search > form > button{
+    flex: 1;
+}
+
+/* TODO needs to redesign */
+.home_main{
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    width: 95%;
+    max-width: 100%;
+    margin:auto;
+    
+}
+#user, #user table, #user table tbody tr{
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#user table{
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px 0px;
+}
+#user table tbody th{
+    background-color: rgb(190, 185, 185);
+}
+
+/* for viewing options once logged in  */
+.user_views_dashboard{
+    display: flex;
+    width: 70%;
+    height: 200px;
+    margin: auto;
+}
+
+.user_views_dashboard ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(145, 126, 181);
+}
+.user_views_dashboard  > ul > li {
+    flex: 1;
+    border: solid 1px white;
+    text-align: center;
+}
+.user_views_dashboard  > ul > li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    height: 100%;
+    padding: 0.5em;
+}
+
+
+/* TODO needs to redesign */
+
+.user_main{
+    width: 80%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.users_table{
+    width: 100%;
+    max-width: 100%;
+    font-size: 20px;
+}
+.users_table table{
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    max-width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+}
+.users_table table tbody tr td th{
+    border: solid 1px black;
+    align-items: center;
+}
+.users_table table tbody tr th{
+    background-color: lightgrey;
+}
+.admin_dashboard{
+    width: 100%;
+    max-width: 100%;
+}
+.admin_dashboard ul {
+    display: flex;
+    list-style-type: none;
+    width: 100%;
+    padding: 2px;
+    margin: 2px;
+}
+.admin_dashboard ul li {
+    width: 100%;
+    max-width: 100%;
+    flex: 1;
+    border: solid 1px white;
+    text-align: center;
+    list-style-type: none;
+    background-color: #3a6ac9;
+}
+.admin_dashboard ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    height: 100%;
+    padding: 0.5em;
+}
+/* #add, p{
+    margin-left: 0px;
+    width: 10%;
+} */
+#my_account{
+    background-color: rgb(159, 232, 128);
+    align-items: center;
+    text-align: center;
+}
+.h2_title{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    width: 20%;
+    justify-content: left;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 100%;
+    justify-content: space-around;
+}
+.buttons button{
+    width: 150px;
+}
+
+.profile_info{
+    width: 70%;
+    margin:auto;
+}
+#for_table {
+    display: flex;
+    width: 80%;
+    padding: 2px;
+    margin: 2px;
+}
+#table{
+    width: 80%;
+    border-collapse: collapse;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+#for_table  #table  tr td{
+    border-collapse: collapse;
+    text-align: left;
+}
+#for_table  #table  tr  tr {
+    padding: 2px;
+    margin:2px;
+}
+.profile_pic img{
+    padding: 5px;
+    margin: 5px;
+    max-height: 100%;
+    max-width: 100%;
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 1px 2px 10px rgba(2, 0, 0, 0.751);
+
+
+}
