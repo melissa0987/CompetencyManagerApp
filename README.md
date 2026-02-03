@@ -2,14 +2,14 @@
 
 A comprehensive web application for managing computer science program courses, competencies, and their relationships. Built with Flask for the Web Applications III course (420-420-DW) offered in Dawson College.
 
-## 🔗 Repository Information
+## Repository Information
 
 - **Current Repository**: https://github.com/melissa0987/CompetencyManagerApp.git
 - **Original GitLab Repository**: https://gitlab.com/python_winter2023/Final_Project *(private)* 
 
 > **Note**: This project was originally developed in a private GitLab repository as part of a team coursework assignment. It has been migrated to GitHub for portfolio purposes while maintaining all original commit history and team contributions.
 
-## 👥 Team Members
+## Team Members
 
 | Name 				    | Student ID | GitLab Username 		|
 |-----------------------|------------|----------------------|
@@ -28,7 +28,7 @@ This Flask-based web application serves as a comprehensive system for managing c
 - **Administrative Dashboard**: User and group management functionality
 - **REST API**: Programmatic access to course and competency data
 
-## 🚀 Features
+## Features
 
 ### User Management
 - **Visitors**: Browse public content, register for accounts
@@ -48,16 +48,16 @@ This Flask-based web application serves as a comprehensive system for managing c
 - JSON responses for external tool integration
 - Curl-compatible endpoints for automation
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Backend**: Flask (Python)
-- **Database**: Oracle PDBORA19C
+- **Database**: Oracle SQL
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Authentication**: Flask-Login
 - **Deployment**: Gunicorn WSGI server
 - **Version Control**: Git/GitLab
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Python 3.7 or higher
@@ -127,7 +127,7 @@ The application will be available at `http://localhost:5000`
    gunicorn -w 2 -b 0.0.0.0:8000 'CompetencyManager:create_app()'
    ```
 
-## 🔐 Default Credentials
+## Default Credentials
 
 For testing and demonstration purposes:
 
@@ -135,7 +135,7 @@ For testing and demonstration purposes:
 - **Password**: Python420
 - **Role**: Super Admin
 
-## 📊 Database Schema
+## Database Schema
 
 The application uses the following main entities:
 - **Users**: Member authentication and profiles
@@ -144,7 +144,7 @@ The application uses the following main entities:
 - **Elements**: Granular competency components
 - **Relationships**: Mappings between courses and competencies
 
-## 🧪 Testing
+## Testing
 
 The project includes comprehensive unit tests for:
 - User authentication flows
@@ -157,7 +157,7 @@ Run tests with:
 python -m unittest discover tests/
 ```
 
-## 📡 API Documentation
+## API Documentation
 
 ### Courses API
 - `GET /api/v1/courses` - List all courses
@@ -184,7 +184,7 @@ curl http://10.172.23.16:8000/api/v1/courses
 curl http://10.172.23.16:8000/api/v1/courses/COURSE_ID
 ```
 
-## 🔧 Development Practices
+## Development Practices
 
 This project follows:
 - **PEP 8**: Python style guidelines (with noted exceptions)
@@ -193,7 +193,7 @@ This project follows:
 - **Code Reviews**: All changes reviewed before merging
 - **Meaningful Commits**: Descriptive commit messages
 
-## ⚠️ Known Issues & Development Notes
+## Known Issues & Development Notes
 
 ### Naming Convention Disclaimer
 
@@ -202,10 +202,7 @@ This project follows:
 This naming inconsistency remains in the codebase as a learning example and to maintain system stability.
 
 
-## 📜 License
+## License
 
 This project is developed for educational purposes as part of the Web Applications III course at Dawson College.
  
----
-
-**Portfolio Note**: This project demonstrates full-stack web development skills, team collaboration, and adherence to software engineering best practices. Originally developed as part of academic coursework, it showcases the ability to work with Flask, Oracle databases, REST APIs, and modern web technologies.
